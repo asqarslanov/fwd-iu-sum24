@@ -1,6 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+.accent {
+  color: var(--green);
+}
+
 body {
+  margin: 0;
+
   background-color: var(--base);
+
   color: var(--text);
+  font-family: "Lexend", sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  height: 1.5rem;
+
+  background-color: var(--surface-0);
+
+  display: flex;
+  justify-content: center;
+
+  p {
+    margin: 0;
+    font-weight: 350;
+  }
+}
+
+h1.name {
+  --size: 8rem;
+
+  font-weight: 550;
+  font-size: var(--size);
+
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: var(--size);
+  grid-template-areas:
+    "name--asqar .           "
+    "   name--ar name--slanov";
+
+  #name--asqar {
+    grid-area: name--asqar;
+  }
+
+  #name--ar {
+    grid-area: name--ar;
+    text-align: right;
+  }
+
+  #name--slanov {
+    grid-area: name--slanov;
+  }
+}
+
+ul.pronunciation {
+  background-color: var(--surface-0);
+  list-style: none;
+  li {
+    ul {
+      list-style: none;
+      li {
+        margin-left: 4px;
+        float: left;
+      }
+    }
+    margin-left: 16px;
+  }
 }
 
 :root {

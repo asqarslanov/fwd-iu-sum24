@@ -185,5 +185,5 @@ icon {
 }
 
 icon.ms-volume-up {
-  mask-image: url("src/assets/icons/ms-volume-up.svg");
+  mask-image: url("/icons/ms-volume-up.svg");
 }

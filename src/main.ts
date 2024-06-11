@@ -1,6 +1,9 @@
+import namePronunciationUrl from "./assets/name-pronunciation.mp3";
+
 main();
 function main(): void {
   putSyllableBreaks();
+  setPronunciationAudioSource();
 }
 
 function putSyllableBreaks(): void {
@@ -13,6 +16,13 @@ function putSyllableBreaks(): void {
       word.innerHTML = result.innerHTML;
     }
   }
+}
+
+function setPronunciationAudioSource(): void {
+  const ID: string = "pronunciation-audio";
+  const audio = document.getElementById(ID)! as HTMLAudioElement;
+
+  audio.src = namePronunciationUrl;
 }
 
 function wordWithSyllableBreaks(word: HTMLSpanElement): HTMLSpanElement {

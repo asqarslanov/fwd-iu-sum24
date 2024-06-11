@@ -13,23 +13,53 @@ body {
   font-family: "Lexend", sans-serif;
 }
 
-main {
-  display: flex;
-  justify-content: center;
+button {
+  cursor: pointer;
+
+  padding: 0.5rem;
+  border-radius: 50%;
+
+  background-color: transparent;
+  border: none;
 }
 
 header {
-  height: 1.5rem;
+  height: 2rem;
 
-  background-color: var(--surface-0);
+  background-color: var(--green);
+  color: var(--base);
 
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  p {
+  > p {
     margin: 0;
     font-weight: 350;
   }
+
+  > button {
+    position: absolute;
+    right: 0;
+
+    > icon.ms-close {
+      width: 1.25rem;
+      background-color: var(--base);
+    }
+  }
+
+  > button:hover > icon.ms-close {
+    background-color: var(--overlay-0);
+  }
+
+  > button:active > icon.ms-close {
+    background-color: var(--crust);
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
 }
 
 h1.name {
@@ -45,22 +75,18 @@ h1.name {
     "name--asqar .           "
     "   name--ar name--slanov";
 
-  #name--asqar {
+  > #name--asqar {
     grid-area: name--asqar;
   }
 
-  #name--ar {
+  > #name--ar {
     grid-area: name--ar;
     text-align: right;
   }
 
-  #name--slanov {
+  > #name--slanov {
     grid-area: name--slanov;
   }
-}
-
-button {
-  cursor: pointer;
 }
 
 div.pronunciation {
@@ -72,31 +98,24 @@ div.pronunciation {
   width: max-content;
   padding: 1rem;
 
-  button {
-    background-color: transparent;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 50%;
-  }
-
-  #pronounce-icon {
+  > #pronounce-icon {
     width: 3rem;
   }
 
-  #pronounce-button:hover > #pronounce-icon {
+  > #pronounce-button:hover > #pronounce-icon {
     background-color: var(--green);
   }
 
-  #pronounce-button:active {
+  > #pronounce-button:active {
     background-color: var(--surface-0);
   }
 
-  div.box {
+  > div.box {
     padding: 0.75rem 1.25rem;
     display: flex;
     gap: 1rem;
 
-    span.word {
+    > span.word {
       display: flex;
       gap: 0.125rem;
     }
@@ -108,7 +127,7 @@ div.pronunciation {
     font-weight: 300;
     vertical-align: sub;
 
-    strong {
+    > strong {
       font-weight: 500;
     }
   }
@@ -186,4 +205,8 @@ icon {
 
 icon.ms-volume-up {
   mask-image: url("/icons/ms-volume-up.svg");
+}
+
+icon.ms-close {
+  mask-image: url("/icons/ms-close.svg");
 }

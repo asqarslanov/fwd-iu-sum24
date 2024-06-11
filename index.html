@@ -28,16 +28,15 @@
         </summary>
 
         <div class="pronunciation">
-          <button onclick="playAudio()" id="pronounce-button">
+          <button
+            onclick="document.getElementById('pronunciation-audio').play()"
+            id="pronounce-button"
+          >
             <icon class="ms-volume-up" id="pronounce-icon"></icon>
-            <audio src="name-pronunciation.mp3" id="pronunciation-audio">
-              <script>
-                function playAudio() {
-                  const audio = document.getElementById("pronunciation-audio");
-                  audio.play();
-                }
-              </script>
-            </audio>
+            <audio
+              src="name-pronunciation.mp3"
+              id="pronunciation-audio"
+            ></audio>
           </button>
 
           <div class="box">

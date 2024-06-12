@@ -25,10 +25,14 @@
 
     <main>
       <section>
-        <details>
+        <details
+          onclick="document.getElementById('pronunciation-button').remove()"
+          id="name"
+        >
           <summary>
             <h1>
               <span id="name--asqar"><span class="accent">Asq</span>ar</span>
+
               <span id="name--ar" class="accent">Ar</span
               ><span id="name--slanov">slanov</span>
 
@@ -59,6 +63,16 @@
                   <icon class="email"></icon>
                 </a>
               </address>
+
+              <button
+                onclick="
+                  document.getElementById('name').setAttribute('open', true);
+                  document.getElementById('pronunciation-button').remove();
+                "
+                id="pronunciation-button"
+              >
+                How to say it?
+              </button>
             </h1>
           </summary>
 

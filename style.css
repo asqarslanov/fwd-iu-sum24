@@ -59,33 +59,67 @@ header {
 
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-h1.name {
-  --size: 8rem;
+details > summary {
+  > h1 {
+    --size: 8rem;
 
-  font-weight: 550;
-  font-size: var(--size);
+    display: grid;
+    grid-template-columns: max-content;
+    grid-template-rows: var(--size);
+    grid-template-areas:
+      "name--asqar links       "
+      "   name--ar name--slanov";
 
-  display: grid;
-  grid-template-columns: max-content;
-  grid-template-rows: var(--size);
-  grid-template-areas:
-    "name--asqar .           "
-    "   name--ar name--slanov";
+    font-size: var(--size);
+    font-weight: 550;
 
-  > #name--asqar {
-    grid-area: name--asqar;
-  }
+    > #name--asqar {
+      grid-area: name--asqar;
+    }
 
-  > #name--ar {
-    grid-area: name--ar;
-    text-align: right;
-  }
+    > #name--ar {
+      grid-area: name--ar;
+      text-align: right;
+    }
 
-  > #name--slanov {
-    grid-area: name--slanov;
+    > #name--slanov {
+      grid-area: name--slanov;
+    }
+
+    > address {
+      grid-area: links;
+
+      display: flex;
+      flex-direction: row;
+      align-self: flex-end;
+      justify-self: center;
+
+      gap: 2rem;
+
+      > a {
+        height: max-content;
+        padding: 0.5rem;
+        border-radius: 50%;
+
+        > icon {
+          width: 3rem;
+          background-color: var(--overlay-0);
+        }
+      }
+
+      > a:hover > icon {
+        background-color: var(--text);
+      }
+
+      > a:active > icon {
+        background-color: var(--green);
+      }
+    }
   }
 }
 
@@ -131,6 +165,28 @@ div.pronunciation {
       font-weight: 500;
     }
   }
+}
+
+a {
+  border-radius: 0.25rem;
+}
+
+a:link {
+  color: var(--green);
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: var(--surface-0);
+}
+
+a:active {
+  background-color: var(--surface-1);
+}
+
+a:visited {
+  color: var(--green);
+  text-decoration: none;
 }
 
 :root {
@@ -195,7 +251,8 @@ div.pronunciation {
 
 icon {
   display: block;
-  mask-size: cover;
+  mask-size: contain;
+  mask-repeat: no-repeat;
 
   width: 2rem;
   aspect-ratio: 1;
@@ -209,4 +266,16 @@ icon.ms-volume-up {
 
 icon.ms-close {
   mask-image: url("/icons/ms-close.svg");
+}
+
+icon.github {
+  mask-image: url("/icons/github.svg");
+}
+
+icon.telegram {
+  mask-image: url("/icons/telegram.svg");
+}
+
+icon.email {
+  mask-image: url("/icons/email.svg");
 }

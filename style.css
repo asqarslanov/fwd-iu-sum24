@@ -66,21 +66,21 @@ main {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-}
 
-button:hover,
-a:hover {
-  background-color: var(--surface-0);
-  > icon {
-    background-color: var(--text);
+  button:hover,
+  a:hover {
+    background-color: var(--surface-0);
+    > icon {
+      background-color: var(--text);
+    }
   }
-}
 
-button:active,
-a:active {
-  background-color: var(--surface-1);
-  > icon {
-    background-color: var(--green);
+  button:active,
+  a:active {
+    background-color: var(--surface-1);
+    > icon {
+      background-color: var(--green);
+    }
   }
 }
 

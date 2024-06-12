@@ -68,6 +68,22 @@ main {
   align-items: center;
 }
 
+button:hover,
+a:hover {
+  background-color: var(--surface-0);
+  > icon {
+    background-color: var(--text);
+  }
+}
+
+button:active,
+a:active {
+  background-color: var(--surface-1);
+  > icon {
+    background-color: var(--green);
+  }
+}
+
 details > summary {
   > h1 {
     --size: 8rem;
@@ -105,23 +121,15 @@ details > summary {
 
       gap: 2rem;
 
-      > a {
+      a {
         height: max-content;
-        padding: 0.5rem;
+        padding: 0.75rem;
         border-radius: 50%;
-
-        > icon {
-          width: 3rem;
-          background-color: var(--overlay-0);
-        }
       }
 
-      > a:hover > icon {
-        background-color: var(--text);
-      }
-
-      > a:active > icon {
-        background-color: var(--green);
+      a > icon {
+        background-color: var(--overlay-0);
+        width: 3rem;
       }
     }
   }
@@ -138,14 +146,6 @@ div.pronunciation {
 
   > #pronounce-icon {
     width: 3rem;
-  }
-
-  > #pronounce-button:hover > #pronounce-icon {
-    background-color: var(--green);
-  }
-
-  > #pronounce-button:active {
-    background-color: var(--surface-0);
   }
 
   > div.box {

@@ -9,7 +9,7 @@ https://asqarslanov.github.io/fwd-iu-sum24/
 
 ## Project structure:
 
-The three main files are [`index.html`](index.html), [`style.css`](style.css), [`src/main.ts`](src/main.ts).
+The three main files are [`index.html`](index.html), [`style.css`](style.css), [`main.ts`](src/main.ts) (a symbolic link to [`src/main.ts`](src/main.ts)).
 
 The assets are located in the [`public/`](public/) and [`src/assets/`](src/assets/) directories.
 

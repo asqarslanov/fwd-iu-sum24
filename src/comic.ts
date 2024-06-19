@@ -35,9 +35,9 @@ async function main(): Promise<void> {
 }
 
 async function apiHw2(email: string): Promise<number> {
-  const url = new URL(
-    `https://fwd.innopolis.university/api/hw2?email=${email}`,
-  );
+  const url = new URL(`https://fwd.innopolis.university/api/hw2`);
+  url.search = new URLSearchParams({ email }).toString();
+
   return fetch(url).then((response) => response.json());
 }
 
@@ -51,7 +51,9 @@ type Comic = {
 };
 
 async function apiComic(id: number): Promise<Comic> {
-  const url = `https://fwd.innopolis.university/api/comic?id=${id}`;
+  const url = new URL(`https://fwd.innopolis.university/api/comic`);
+  url.search = new URLSearchParams({ id: id.toString() }).toString();
+
   return fetch(url).then((response) => response.json());
 }
 

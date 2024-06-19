@@ -26,7 +26,7 @@ async function main(): Promise<void> {
     month: "long",
     year: "numeric",
   });
-  const uploaded = document.createElement("div");
+  const uploaded = document.createElement("span");
   uploaded.innerHTML = `Uploaded: ${time.outerHTML}`;
 
   comic.appendChild(uploaded);

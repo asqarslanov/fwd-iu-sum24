@@ -1,3 +1,5 @@
+import { formatDistanceToNow } from "date-fns";
+
 main();
 async function main(): Promise<void> {
   const id = await apiHw2("a.arslanov@innopolis.university");
@@ -22,10 +24,8 @@ async function main(): Promise<void> {
     ),
   );
   const time = document.createElement("time");
-  time.innerHTML = date.toLocaleDateString(undefined, {
-    month: "long",
-    year: "numeric",
-  });
+
+  time.textContent = formatDistanceToNow(date, { addSuffix: true });
   const uploaded = document.createElement("span");
   uploaded.innerHTML = `Uploaded: ${time.outerHTML}`;
 
@@ -44,17 +44,22 @@ async function apiHw2(email: string): Promise<number> {
 type Comic = {
   month: string;
   num: number;
+  link: string;
   year: string;
+  news: string;
   safe_title: string;
+  transcript: string;
   alt: string;
   img: string;
+  title: string;
+  day: string;
 };
 
 async function apiComic(id: number): Promise<Comic> {
   const url = new URL(`https://fwd.innopolis.university/api/comic`);
   url.search = new URLSearchParams({ id: id.toString() }).toString();
 
-  return fetch(url).then((response) => response.json());
+  return fetch(url).then((response): Promise<Comic> => response.json());
 }
 
 function addComic(comic: HTMLElement): void {

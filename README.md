@@ -7,83 +7,41 @@ Front-end Web Development / Sum24
 
 https://asqarslanov.github.io/fwd-iu-sum24/
 
-## Project structure:
+# create-svelte
 
-The three main files are [`index.html`](index.html), [`style.css`](style.css), [`main.ts`](src/main.ts) (a symbolic link to [`src/main.ts`](src/main.ts)).
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-The assets are located in the [`public/`](public/) and [`src/assets/`](src/assets/) directories.
+## Creating a project
 
-## Running locally:
-
-The project uses [Vite](https://vitejs.dev/) as the build tool. If you&CloseCurlyQuote;re familiar with it, you can figure out the process yourself.
-
-### Clone the repository to your machine:
+If you&CloseCurlyQuote;re seeing this, you&CloseCurlyQuote;ve probably already done this step. Congrats!
 
 ```shell
-git clone https://github.com/asqarslanov/fwd-iu-sum24.git
+# create a new project in the current directory
+bun create svelte@latest
 
+# create a new project in my-app
+bun create svelte@latest my-app
 ```
 
-### Open the project directory:
+## Developing
+
+Once you&CloseCurlyQuote;ve created a project and installed dependencies with `bun install`, start a development server:
 
 ```shell
-cd fwd-iu-sum24/
+bun run dev
+
+# or start the server and open the app in a new browser tab
+bun run dev -- --open
 ```
 
-### Install dependencies:
+## Building
 
-#### Using Bun:
-
-```shell
-bun install
-```
-
-#### Using Node.js:
-
-```shell
-npm install
-```
-
-### Start a development server and open in the browser:
-
-#### Using Bun:
-
-```shell
-bun dev --open
-```
-
-#### Using Node.js:
-
-```shell
-npm run dev --open
-```
-
-### Build a release version:
-
-#### Using Bun:
+To create a production version of your app:
 
 ```shell
 bun run build
 ```
 
-#### Using Node.js:
+You can preview the production build with `bun run preview`.
 
-```shell
-npm run build
-```
-
-You can then find the resulting files inside the `dist/` directory.
-
-### Open the page in the browser:
-
-#### Using Bun:
-
-```shell
-bun run preview --open
-```
-
-#### Using Node.js:
-
-```shell
-npm run preview --open
-```
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
